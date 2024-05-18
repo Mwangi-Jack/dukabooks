@@ -24,7 +24,7 @@ export default function Signup(){
 						<input  type="password" placeholder="confirm password" className="border rounded pl-2"/>
 					</div>
 					<div className="flex justify-center">
-					<button className="border w-60 mt-5 mb-5 rounded p-1 bg-[#004940d7] text-white">Signup</button>
+					<button className="border w-60 rounded p-1 bg-[#004940d7] text-white">Signup</button>
 					</div>
 					<div >
 						<div className="flex items-center">
@@ -32,8 +32,8 @@ export default function Signup(){
 							<span className="ml-2 mr-2 text-xl">or</span>
 							<span className="w-[50%]"><hr /></span>
 						</div>
-						<div className="flex justify-center">
-							<button className="border w-60 mt-5 mb-5 rounded p-1 bg-[#004940d7] text-white">SignIn with Google</button>
+						<div className="flex justify-center m-5">
+							<button className="border w-60 rounded p-1 bg-[#004940d7] text-white">SignIn with Google</button>
 						</div>
 
 					</div>
