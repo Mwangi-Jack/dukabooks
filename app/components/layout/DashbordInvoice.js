@@ -22,7 +22,11 @@ function DashbordInvoice(){
 				</div>
 			</div>
 			<div>
-				<ProgressBar completed={30} />
+				<ProgressBar
+					bgColor="#004940"
+					borderRadius="4px"
+					completed={30}
+				/>
 			</div>
 
 			<div className="space-y-4">
@@ -30,7 +34,7 @@ function DashbordInvoice(){
 					<span className="font-bold">Ksh 3, 234 Paid</span>
 					<span className="text-sm">Limit 30 Days</span>
 				</div>
-				<div className="flex justify-between">
+				<div className="flex justify-between py-5">
 					<div className="flex flex-col">
 						<span className="font-bold">Ksh 2,062</span>
 						<span>Not Deposited</span>
@@ -40,6 +44,11 @@ function DashbordInvoice(){
 						<span>Deposited</span>
 					</div>
 				</div>
+				<ProgressBar
+					bgColor="#004940"
+					borderRadius="4px"
+					completed={30}
+				/>
 			</div>
 		</div>
 	 </div>

@@ -1,7 +1,7 @@
 
-import { FaUser } from "react-icons/fa";
 import { FaBell } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
+import Dropdown from "../ui/Dropdown";
 
 
 function DashboardNavBar(){
@@ -18,7 +18,7 @@ function DashboardNavBar(){
 				</div>
 			</div>
 			<FaBell size={20} color={'#004940'} />
-			<FaUser size={20} color={'#004940'} />
+			<Dropdown />
 		</div>
 	)
 }

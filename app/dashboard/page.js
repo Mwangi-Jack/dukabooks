@@ -21,7 +21,7 @@ export default function Dashboard(){
 		<div className="flex flex-row h-[100vh]">
 			<Sidebar />
 			{/* Main */}
-			<div className="w-[100%]">
+			<div className="w-[100%] ml-[17rem]">
 				<DashboardNavBar />
 
 				{/* Cash flow */}
