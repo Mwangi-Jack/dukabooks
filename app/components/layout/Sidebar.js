@@ -1,11 +1,12 @@
 'use client'
 
 import Image from "next/image";
-import Button from "../common/Button";
+import CustomBtn from "../common/Button";
 import Link from "next/link";
 
 // icons
 import { MdKeyboardArrowRight } from "react-icons/md";
+import Modal from "../ui/Modal";
 
 const SideLinks = [
 	{
@@ -58,8 +59,9 @@ export default function Sidebar(){
 					<Image src={'/static/images/logo2.png'} height={100} width={100} />
 				</div>
 				<div className="py-5">
-					<Button text={'+ Create New'}/>
+					<Modal />
 				</div>
+
 			</div>
 
 			<div className="space-y-4 w-[100%]">
