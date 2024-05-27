@@ -68,10 +68,10 @@ export default function Sidebar(){
 				{
 					SideLinks.map((link)=>{
 						return (
-							<button onClick={()=> handleButtonClick(link.path)} className="py-2 px-1 flex justify-between hover:bg-[#D9D9D9] w-[100%]" key={link.id}>
+							<Link href={link.path} className="py-2 px-1 flex justify-between hover:bg-[#D9D9D9] w-[100%]" key={link.id}>
 								<span >{link.name}</span>
 								<MdKeyboardArrowRight size={25} />
-							</button>
+							</Link>
 						)
 					})
 				}

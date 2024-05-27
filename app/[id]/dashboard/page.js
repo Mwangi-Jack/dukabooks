@@ -1,19 +1,21 @@
 'use client'
 
-import Button from "../components/common/Button";
-import DashboardNavBar from "../components/layout/DashboardNavbar";
-import Footer from "../components/layout/Footer";
-import Header from "../components/layout/Header";
-import Sidebar from "../components/layout/Sidebar";
-import BarChart from "../components/ui/BarChart";
+import Button from "../../components/common/Button";
+import DashboardNavBar from "../../components/layout/DashboardNavbar";
+import Footer from "../../components/layout/Footer";
+import Header from "../../components/layout/Header";
+import Sidebar from "../../components/layout/Sidebar";
+import BarChart from "../../components/ui/BarChart";
 import ProgressBar from "@ramonak/react-progress-bar"
+
+
 
 // icons
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import { GoDotFill } from "react-icons/go";
 import { GoDot } from "react-icons/go";
-import DashboardExpense from "../components/layout/DashboardExpense";
-import DashbordInvoice from "../components/layout/DashbordInvoice";
+import DashboardExpense from "../../components/layout/DashboardExpense";
+import DashbordInvoice from "../../components/layout/DashbordInvoice";
 
 
 export default function Dashboard(){
