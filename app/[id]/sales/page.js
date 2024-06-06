@@ -5,13 +5,13 @@ import Sidebar from '@/app/components/layout/Sidebar'
 import React from 'react'
 
 
-export default function Transactions(){
+export default function Sales(){
 	return (
 		<div className="">
 			<Sidebar />
 			<div className=" basis-1/2 border border-red-600 ml-[17rem]">
 				<DashboardNavBar />
-				<h1>EXPENSES DYNAMIC</h1>
+				<h1>SALES DYNAMIC</h1>
 			</div>
 		</div>
 	)

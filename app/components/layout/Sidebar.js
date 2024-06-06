@@ -7,6 +7,7 @@ import Link from "next/link";
 // icons
 import { MdKeyboardArrowRight } from "react-icons/md";
 import Modal from "../ui/Modal";
+import { useState } from "react";
 
 const SideLinks = [
 	{
@@ -17,37 +18,40 @@ const SideLinks = [
 	{
 	  id: 2,
 	  name: 'Transactions',
-	  path: '/dashboard/transactions'
+	  path: '/transactions'
 	},
 	{
 	  id: 3,
 	  name: 'Expenses',
-	  path: '/dashboard/expenses'
+	  path: '/expenses'
 	},
 	{
 	  id: 4,
 	  name: 'Sales',
-	  path: '/dashboard/sales'
+	  path: '/sales'
 	},
 	{
 		id: 4,
 		name: 'Projects',
-		path: '/dashboard/projects'
+		path: '/projects'
 	},
 	{
 		id: 4,
 		name: 'Reports',
-		path: '/dashboard/reports'
+		path: '/reports'
 	},
 	{
 		id: 4,
 		name: 'Help',
-		path: '/dashboard/help'
+		path: '/help'
 	  },
 
   ]
 
 export default function Sidebar(){
+	const [id, setId] = useState('12bca');
+	const [linkActive, setLinkActive] = useState(false);
+
 	const handleButtonClick = (path)=>{
 		alert(`You are being redirected to ${path}`)
 		console.log(`You are being redirected to ${path}`)
@@ -68,7 +72,12 @@ export default function Sidebar(){
 				{
 					SideLinks.map((link)=>{
 						return (
-							<Link href={link.path} className="py-2 px-1 flex justify-between hover:bg-[#D9D9D9] w-[100%]" key={link.id}>
+							<Link
+								href={`/${id}/${link.path}`}
+								className='py-2 px-1 flex justify-between hover:bg-[#D9D9D9] w-[100%]'
+								key={link.id}
+								onClick={()=>{setLinkActive(true)}}
+								>
 								<span >{link.name}</span>
 								<MdKeyboardArrowRight size={25} />
 							</Link>
