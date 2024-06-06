@@ -11,7 +11,7 @@ function About(){
 				<div className="flex flex-col space-y-4 items-center">
 					<span className="font-bold text-xl">We Are Here to Streamline All Your SME Business  Activities</span>
 					<span>
-						<Image src={'/static/images/team.png'} width={700} height={100} />
+						<Image src={'/static/images/team.png'} width={700} height={100} alt="team banner" />
 					</span>
 				</div>
 				<div >
