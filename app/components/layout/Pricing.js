@@ -48,7 +48,7 @@ export default function Pricing() {
 			<h1 className="text-3xl font-bold">Pricing</h1>
 			<h1 className="font-bold">Pricing Plans for SMEs of All Sizes</h1>
 			<article className="flex flex-col items-center">
-				<span>Choose an affordable plan that's packed with the best features</span>
+				<span>Choose an affordable plan that is packed with the best features</span>
 				<span> for enhancing your business processes, facilitating</span>
 				<span>smooth transaction records, and driving sales.</span>
 			</article>

@@ -58,7 +58,7 @@ export default function Footer() {
 					<span>Save Ksh 200 with App. New User Only</span>
 					<div className='flex justify-between  w-[20rem] my-4'>
 						<div className='h-32 w-32'>
-							<img src='/static/images/Qrcode.png' alt='qrcode' className='w-[100%] h-[100%]' />
+							<Image src='/static/images/Qrcode.png' alt='qrcode' width={150} height={150} />
 						</div>
 						<div className='space-y-4 flex flex-col justify-center'>
 							<div className='h-10 w-40 flex items-center justify-center'>
