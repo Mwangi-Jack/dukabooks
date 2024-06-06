@@ -62,10 +62,10 @@ export default function Footer() {
 						</div>
 						<div className='space-y-4 flex flex-col justify-center'>
 							<div className='h-10 w-40 flex items-center justify-center'>
-								<img src='/static/images/download_playstore.png' className='w-[100%] h-[100%]' alt='playstore' />
+								<Image src='/static/images/download_playstore.png' width={150} height={100} alt='playstore' />
 							</div>
 							<div className='h-10 w-40 flex items-center justify-center'>
-								<img src='/static/images/download-appstore.png' alt='app store' className='w-[100%] h-[100%]' />
+								<Image src='/static/images/download-appstore.png' alt='app store' height={100} width={150}/>
 							</div>
 						</div>
 					</div>

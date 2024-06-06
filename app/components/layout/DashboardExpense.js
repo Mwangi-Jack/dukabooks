@@ -44,9 +44,9 @@ function DashboardExpense(){
 						<DoughnutChart />
 					</div>
 					<div className="flex flex-col justify-center space-y-3">
-						{expenses.map((expense)=>{
+						{expenses.map((expense,index)=>{
 							return (
-								<div className="flex">
+								<div className="flex" key={index}>
 									<span className="flex items-center">
 										<GoDotFill size={20} color={expense.color} />
 									</span>

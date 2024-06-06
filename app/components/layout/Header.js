@@ -30,7 +30,7 @@ export default function Header() {
   return (
     <div className="bg-[#004940d3] w-[100%] flex justify-between pr-10 pl-10 text-white shadow-lg shadow-[#00000069] fixed top-0 ">
       <div className="m-1">
-        <Image src={'/static/images/logo1.png'} width={45} height={10} />
+        <Image src={'/static/images/logo1.png'} width={45} height={10}  alt={'logo'}/>
       </div>
       <div className="flex  w-[500px] items-center">
         <ul className="w-[100%] flex  justify-between">

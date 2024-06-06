@@ -16,7 +16,7 @@ export default function Home() {
           <span className="text-2xl">Bookkeeping Needs!</span>
         </div>
         <div>
-          <Image src={'/static/images/avatar3.png'} width={600} height={500} />
+          <Image src={'/static/images/avatar3.png'} width={600} height={500}  alt="avatar" />
         </div>
       </div>
 

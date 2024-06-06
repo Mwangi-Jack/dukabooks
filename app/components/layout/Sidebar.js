@@ -60,7 +60,7 @@ export default function Sidebar(){
 		<div className="basis-1/5 h-[100%] shadow-2xl fixed w-[17rem] bg-white">
 			<div className="py-5 px-5">
 				<div className="flex justify-center">
-					<Image src={'/static/images/logo2.png'} height={100} width={100} />
+					<Image src={'/static/images/logo2.png'} height={100} width={100}  alt="logo"/>
 				</div>
 				<div className="py-5">
 					<Modal />

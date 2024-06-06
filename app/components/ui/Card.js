@@ -10,7 +10,7 @@ export default function Card({ plan }) {
 		</div>
 		<button className="border w-48 mt-5 mb-5 rounded p-1 hover:bg-[#004940d7] hover:text-white">Buy Plan</button>
 		<div className="space-y-4">
-			{plan.features.map((feature)=> <p>{feature}</p>)}
+			{plan.features.map((feature, index)=> <p key={index}>{feature}</p>)}
 		</div>
 
 	</div>
