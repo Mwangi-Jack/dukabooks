@@ -12,7 +12,7 @@ export default function Login(){
 	return (
 		<div className="ml-10">
 			<div className="mt-4">
-				<Image src={'/static/images/logo2.png'} height={100} width={100} />
+				<Image src={'/static/images/logo2.png'} height={100} width={100} alt={'login banner'} />
 			</div>
 			<div className="flex justify-evenly">
 				<div className="flex flex-col items-center justify-center  space-y-10">
