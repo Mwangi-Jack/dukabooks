@@ -24,7 +24,7 @@ function About(){
 							<article className="font-thin w-[100%]" >
 								We know the excitement and passion that comes
 								with running a business, <br /> but we also understand the stress and
-								confusion of managing finances because we've been there ourselves.
+								confusion of managing finances because we have been there ourselves.
 							</article>
 							<article className="font-thin w-[100%]">
 								We have a deep knowledge of the unique needs of different types
@@ -34,7 +34,7 @@ function About(){
 						</div>
 						<div className="flex space-x-14">
 							<article className="font-thin">
-								What's different about DukaBooks is that we're
+								What is different about DukaBooks is that we are
 								also experts in digital finance management.
 							</article>
 							<article className="font-thin">

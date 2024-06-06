@@ -21,7 +21,7 @@ export default function Signup(){
 	return (
 		<div className="ml-10">
 			<div className="mt-4">
-				<Image src={'/static/images/logo2.png'} height={100} width={100} alt={'signup banner'} />
+				<Image src={'/static/images/logo2.png'} height={100} width={100} alt={'logo'} />
 			</div>
 			<div className="flex justify-evenly">
 				<div className="flex flex-col items-center justify-center  space-y-5">
@@ -79,7 +79,7 @@ export default function Signup(){
 						</div>
 				</div>
 				<div>
-					<Image src={'/static/images/avatar.jpg'} width={500} height={500} />
+					<Image src={'/static/images/avatar.jpg'} width={500} height={500} alt="signup banner" />
 				</div>
 			</div>
 
