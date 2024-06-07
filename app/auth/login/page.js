@@ -1,3 +1,5 @@
+'use client'
+import React, { useState } from "react";
 import Button from "@/app/components/common/Button";
 import FloatingLabelInput from "@/app/components/common/FloatingLabelInput";
 import Footer from "@/app/components/layout/Footer";
@@ -9,6 +11,16 @@ import { FcGoogle } from "react-icons/fc";
 import { PiMicrosoftOutlookLogo } from "react-icons/pi";
 
 export default function Login(){
+	const [form, setForm] = useState({
+		"username": null,
+		"password": null
+	})
+
+	const handleSubmit = () => {
+		console.log(form)
+		alert("Form Submitted!!")
+	}
+
 	return (
 		<div className="ml-10">
 			<div className="mt-4">
@@ -22,9 +34,23 @@ export default function Login(){
 					</div>
 					<div>
 						<div className="flex flex-col space-y-4">
-							<FloatingLabelInput className="cursor-pointer"  label="username/email" type="text" />
-							<FloatingLabelInput className="cursor-pointer" label="password" type="password" />
-							<Button text={'Login'}/>
+							<FloatingLabelInput
+								className="cursor-pointer"
+								label="username/email"
+								type="text"
+								name={"username"}
+								setForm={setForm}
+								form={form}
+								/>
+							<FloatingLabelInput
+								className="cursor-pointer"
+								label="password"
+								type="password"
+								name={"password"}
+								setForm={setForm}
+								form={form}
+							/>
+							<Button text={'Login'} onClick={handleSubmit}/>
 						</div>
 						<div className="flex justify-end mt-2">
 							<Link href={'/'}>Forgot Password ?</Link>
@@ -45,8 +71,9 @@ export default function Login(){
 							</div>
 						</div>
 				</div>
-				<div>
+				<div className="flex flex-col items-center space-y-2">
 					<Image src={'/static/images/avatar4.jpg'} width={500} height={500} alt="login banner" />
+					<span className="">Don't have an account ? <Link href={'/auth/signup'} className=" font-black">Signup</Link></span>
 				</div>
 			</div>
 

@@ -17,6 +17,14 @@ import { PiMicrosoftOutlookLogo } from "react-icons/pi";
 
 export default function Signup(){
 	const [phone, setPhone] = useState('');
+	const [form, setForm] = useState({
+		"Fname": null,
+		"Sname": null,
+		"email": null,
+		"phone": "+254",
+		"password": null,
+		"Cpassword": null
+	})
 
 	return (
 		<div className="ml-10">
@@ -32,17 +40,38 @@ export default function Signup(){
 					<div>
 						<div className="flex flex-col space-y-4">
 							<div className="flex  space-x-2">
-								<FloatingLabelInput className="cursor-pointer" label="First name" type="text" />
-								<FloatingLabelInput className="cursor-pointer" label="Second name" type="text" />
+								<FloatingLabelInput
+									className="cursor-pointer"
+									label="First name"
+									type="text"
+									name={"Fname"}
+									form={form}
+									setForm={setForm}
+									/>
+								<FloatingLabelInput
+									className="cursor-pointer"
+									label="Second name"
+									type="text"
+									name={"Sname"}
+									form={form}
+									setForm={setForm}
+									/>
 							</div>
 							<div className="flex  space-x-2">
-								<FloatingLabelInput className="cursor-pointer" label="Email" type="email" />
+								<FloatingLabelInput
+									className="cursor-pointer"
+									label="Email"
+									type="email"
+									name={"email"}
+									form={form}
+									setForm={setForm}
+									/>
 								{/* <FloatingLabelInput className="cursor-pointer" label="Phone" type="tel" /> */}
 								<div className="my-6">
 								<PhoneInput
 									className='h-[50px] mt-[-10px]'
 									country={'ke'}
-									value={phone}
+									value={form.phone}
 									inputStyle={{
 									width: '100%',
 									// paddingLeft: '50px',
@@ -78,8 +107,9 @@ export default function Signup(){
 							</div>
 						</div>
 				</div>
-				<div>
+				<div className="flex  flex-col items-center">
 					<Image src={'/static/images/avatar.jpg'} width={500} height={500} alt="signup banner" />
+					<span>Don't have an account ? <Link href={'/auth/login'} className="font-black">Login</Link></span>
 				</div>
 			</div>
 

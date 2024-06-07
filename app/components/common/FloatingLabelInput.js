@@ -9,12 +9,18 @@ const FloatingLabelInput = ({ label, type = 'text' }) => {
   const handleFocus = () => setIsFocused(true);
   const handleBlur = () => setIsFocused(value !== '');
 
+  // const handleInputChange = (e) => {
+  //   if (name === "username"){
+  //     setForm({...form, "username": e.target.value})
+  //   } else if (name === "email"){
+  //     setForm({...form, "email": e.target.value})
+  //   }
+  // }
+
   return (
     <div className="relative my-4">
       <input
         type={type}
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
         onFocus={handleFocus}
         onBlur={handleBlur}
         className="w-full px-3 py-2 border border-gray-300 rounded-lg outline-none focus:border-[#004940] transition-all duration-200"
