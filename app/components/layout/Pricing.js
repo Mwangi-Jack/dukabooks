@@ -54,7 +54,7 @@ export default function Pricing() {
 			</article>
 		</div>
 		<div className="flex justify-evenly m-10">
-			{PricingPlans.map((plan, index)=> <Card key={index} plan={plan}/>)}
+			{PricingPlans.map((plan)=> <Card plan={plan}/>)}
 		</div>
 	</div>
   );
