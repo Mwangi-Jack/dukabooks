@@ -149,7 +149,7 @@ export default function Signup(){
 				</div>
 				<div className="flex  flex-col items-center">
 					<Image src={'/static/images/avatar.jpg'} width={500} height={500} alt="signup banner" />
-					<span>Don't have an account ? <Link href={'/auth/login'} className="font-black">Login</Link></span>
+					<span>Already have an account ? <Link href={'/auth/login'} className="font-black">Login</Link></span>
 				</div>
 			</div>
 

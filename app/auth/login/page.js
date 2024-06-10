@@ -89,7 +89,7 @@ export default function Login(){
 				</div>
 				<div className="flex flex-col items-center space-y-2">
 					<Image src={'/static/images/avatar4.jpg'} width={500} height={500} alt="login banner" />
-					<span className="">Don't have an account ? <Link href={'/auth/signup'} className=" font-black">Signup</Link></span>
+					<span className="">Don&apos;t have an account ? <Link href={'/auth/signup'} className=" font-black">Signup</Link></span>
 				</div>
 			</div>
 
