@@ -14,8 +14,10 @@ import Button from "@/app/components/common/Button";
 // icons
 import { FcGoogle } from "react-icons/fc";
 import { PiMicrosoftOutlookLogo } from "react-icons/pi";
+import useUserHook from "@/app/hooks/useUserHook";
 
 export default function Signup(){
+	const { register } = useUserHook();
 	const [phone, setPhone] = useState('');
 	const [form, setForm] = useState({
 		"Fname": null,
@@ -25,6 +27,29 @@ export default function Signup(){
 		"password": null,
 		"Cpassword": null
 	})
+
+
+	const handlePhoneInput = (value) => {
+		setForm({...form, "phone": value})
+		console.log("PHONE NUMBER:::", value)
+	}
+
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+		setForm({
+			...form,
+			[name] :value
+		})
+
+	}
+
+	const handleSubmit = (e) => {
+		e.preventDefault()
+		console.log(form)
+
+		const user = register(form)
+
+	}
 
 	return (
 		<div className="ml-10">
@@ -38,23 +63,23 @@ export default function Signup(){
 						<span className="text-sm">Please Enter Your details to Signup</span>
 					</div>
 					<div>
-						<div className="flex flex-col space-y-4">
+						<form onSubmit={handleSubmit} className="flex flex-col space-y-4">
 							<div className="flex  space-x-2">
 								<FloatingLabelInput
 									className="cursor-pointer"
 									label="First name"
 									type="text"
 									name={"Fname"}
-									form={form}
-									setForm={setForm}
+									value={form.Fname}
+									handleChange={handleChange}
 									/>
 								<FloatingLabelInput
 									className="cursor-pointer"
 									label="Second name"
 									type="text"
 									name={"Sname"}
-									form={form}
-									setForm={setForm}
+									handleChange={handleChange}
+									value={form.Sname}
 									/>
 							</div>
 							<div className="flex  space-x-2">
@@ -63,34 +88,49 @@ export default function Signup(){
 									label="Email"
 									type="email"
 									name={"email"}
-									form={form}
-									setForm={setForm}
+									value={form.email}
+									handleChange={handleChange}
 									/>
-								{/* <FloatingLabelInput className="cursor-pointer" label="Phone" type="tel" /> */}
 								<div className="my-6">
-								<PhoneInput
-									className='h-[50px] mt-[-10px]'
-									country={'ke'}
-									value={form.phone}
-									inputStyle={{
-									width: '100%',
-									// paddingLeft: '50px',
-									border: '1px solid #ccc',
-									borderRadius: '4px',
-									height:'100%',
-									outline: 'none'
-									}}
-									containerStyle={{ width: '100%' }}
-								/>
+									<PhoneInput
+										className='h-[50px] mt-[-10px]'
+										country={'ke'}
+										value={form.phone}
+										name={"phone"}
+										onChange={handlePhoneInput}
+										inputStyle={{
+										width: '100%',
+										border: '1px solid #ccc',
+										borderRadius: '4px',
+										height:'100%',
+										outline: 'none'
+										}}
+										inputProps={{required: true}}
+										containerStyle={{ width: '100%' }}
+									/>
 								</div>
 							</div>
 							<div className="flex  space-x-2">
-								<FloatingLabelInput className="cursor-pointer"  label="Password" type="password" />
-								<FloatingLabelInput className="cursor-pointer" label="Confirm password" type="password" />
+								<FloatingLabelInput
+									className="cursor-pointer"
+									name={"password"}
+									value={form.password}
+									label="Password"
+									type="password"
+									handleChange={handleChange}
+									/>
+								<FloatingLabelInput
+									className="cursor-pointer"
+									name={"Cpassword"}
+									label="Confirm password"
+									value={form.Cpassword}
+									type="password"
+									handleChange={handleChange}
+								/>
 							</div>
 
-							<Button text={'Signup'}/>
-						</div>
+							<button type="submit">Signup</button>
+						</form>
 					</div>
 						<div className="flex flex-col w-[100%] items-center px-3">
 							<div className="flex items-center justify-center w-[100%]">

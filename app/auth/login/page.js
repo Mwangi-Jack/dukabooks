@@ -1,24 +1,40 @@
 'use client'
+
 import React, { useState } from "react";
 import Button from "@/app/components/common/Button";
 import FloatingLabelInput from "@/app/components/common/FloatingLabelInput";
 import Footer from "@/app/components/layout/Footer";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 // icons
 import { FcGoogle } from "react-icons/fc";
 import { PiMicrosoftOutlookLogo } from "react-icons/pi";
+import useUserHook from "@/app/hooks/useUserHook";
 
 export default function Login(){
+	const { login } = useUserHook();
+	const router = useRouter()
+
 	const [form, setForm] = useState({
 		"username": null,
 		"password": null
 	})
 
-	const handleSubmit = () => {
-		console.log(form)
-		alert("Form Submitted!!")
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+		setForm({
+			...form,
+			[name]: value
+		})
+	}
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		const user = login(form)
+		console.log("USER FOUND::::", user)
+		user ? router.push(`/${user.id}/dashboard`) :
+			alert("user Not Found")
 	}
 
 	return (
@@ -33,25 +49,25 @@ export default function Login(){
 						<span className="text-sm">Please Enter Your Email and Password to Login</span>
 					</div>
 					<div>
-						<div className="flex flex-col space-y-4">
+						<form onSubmit={handleSubmit} className="flex flex-col space-y-4">
 							<FloatingLabelInput
 								className="cursor-pointer"
 								label="username/email"
 								type="text"
 								name={"username"}
-								setForm={setForm}
-								form={form}
+								value={form.username}
+								handleChange={handleChange}
 								/>
 							<FloatingLabelInput
 								className="cursor-pointer"
 								label="password"
 								type="password"
 								name={"password"}
-								setForm={setForm}
-								form={form}
+								value={form.password}
+								handleChange={handleChange}
 							/>
-							<Button text={'Login'} onClick={handleSubmit}/>
-						</div>
+							<button type="submit">Login</button>
+						</form>
 						<div className="flex justify-end mt-2">
 							<Link href={'/'}>Forgot Password ?</Link>
 						</div>
