@@ -5,8 +5,8 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { v4 as uuidv4 } from 'uuid';
 
-// const baseUrl = "https://duka-books-api.vercel.app"
-const baseUrl = " http://localhost:3001";
+const baseUrl = "https://duka-books-api.vercel.app"
+// const baseUrl = " http://localhost:3001";
 
 export const REQUEST_STATUS = {
 	LOADING: "loading",
