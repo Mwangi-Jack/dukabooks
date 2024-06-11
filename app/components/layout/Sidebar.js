@@ -3,6 +3,7 @@
 import Image from "next/image";
 import CustomBtn from "../common/Button";
 import Link from "next/link";
+import classNames from "classnames";
 
 // icons
 import { MdKeyboardArrowRight } from "react-icons/md";
@@ -48,6 +49,7 @@ const SideLinks = [
 
   ]
 
+
 export default function Sidebar(){
 	const [id, setId] = useState('12bca');
 	const [linkActive, setLinkActive] = useState(false);
@@ -56,6 +58,15 @@ export default function Sidebar(){
 		alert(`You are being redirected to ${path}`)
 		console.log(`You are being redirected to ${path}`)
 	}
+
+	const linkClasses = classNames(
+		{
+			'bg-blue': linkActive,
+			'bg-white': !linkActive
+		},
+		'py-2 px-1 flex justify-between hover:bg-[#D9D9D9] w-full'
+	)
+
 	return (
 		<div className="basis-1/5 h-[100%] shadow-2xl fixed w-[17rem] bg-white">
 			<div className="py-5 px-5">
@@ -74,7 +85,7 @@ export default function Sidebar(){
 						return (
 							<Link
 								href={`/${id}/${link.path}`}
-								className='py-2 px-1 flex justify-between hover:bg-[#D9D9D9] w-[100%]'
+								className={linkClasses}
 								key={link.id}
 								onClick={()=>{setLinkActive(true)}}
 								>

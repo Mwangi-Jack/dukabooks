@@ -4,9 +4,18 @@ import { Button, Dialog, DialogPanel, DialogTitle, Transition, TransitionChild }
 import { useState } from 'react'
 
 import CustomBtn from '../common/Button'
+import Input from '../common/Input'
+import FloatingLabelInput from '../common/FloatingLabelInput'
+import SelectInput from '../common/SelectInput'
 
 export default function Modal() {
-  let [isOpen, setIsOpen] = useState(false)
+  let [isOpen, setIsOpen] = useState(false);
+  const [ form, setForm ] = useState({
+    productName : '',
+    paymentMethod: '',
+    amount_paid: null,
+    amount_due: null
+  })
 
   function open() {
     setIsOpen(true)
@@ -14,6 +23,19 @@ export default function Modal() {
 
   function close() {
     setIsOpen(false)
+  }
+
+  const handleChange = (e) => {
+    let { name, value } = e.target;
+    setForm({
+      ...form,
+      [name]: value
+    })
+  }
+
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+    console.log("Form::::",form)
   }
 
   return (
@@ -42,24 +64,28 @@ export default function Modal() {
                     <span>Add Transaction</span>
                     <span onClick={close}>&times</span>
                   </DialogTitle>
-                  <div className='space-y-6'>
-                    <div className='space-x-10'>
-                      <input />
-                      <input />
+                  <form onSubmit={handleSubmit}>
+                    <div className='space-y-6'>
+                      <SelectInput  label={'Record Type'}/>
+                      <div className='flex space-x-4'>
+                        <Input name={'productName'} label={'Product Name'} handleChange={handleChange} />
+                        <Input name={'amount_paid'} label={'Amount Paid'} handleChange={handleChange}/>
+                      </div>
+                      <div className=' flex space-x-4'>
+                        <Input name={'amount_due'} label={'Amount Due'}  handleChange={handleChange}/>
+                        <Input name={'paymentMethod'}  label={'Payment Method'} handleChange={handleChange}/>
+                      </div>
                     </div>
-                    <div className='space-x-10'>
-                      <input />
-                      <input />
+                    <div className="mt-4">
+                      <Button
+                        type='submit'
+                        className="inline-flex items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white"
+                        onClick={close}
+                      >
+                        submit
+                      </Button>
                     </div>
-                  </div>
-                  <div className="mt-4">
-                    <Button
-                      className="inline-flex items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white"
-                      onClick={close}
-                    >
-                      submit
-                    </Button>
-                  </div>
+                  </form>
                 </DialogPanel>
               </TransitionChild>
             </div>
