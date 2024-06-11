@@ -2,11 +2,10 @@
 
 import React, { useState , useEffect } from "react"
 import axios from "axios";
-import { useRouter } from "next/navigation";
 import { v4 as uuidv4 } from 'uuid';
 
-const baseUrl = "https://duka-books-api.vercel.app"
-// const baseUrl = " http://localhost:3001";
+// const baseUrl = "https://duka-books-api.vercel.app"
+const baseUrl = " http://localhost:3001";
 
 export const REQUEST_STATUS = {
 	LOADING: "loading",
@@ -36,10 +35,8 @@ function useUserHook(){
 
 
 	function login(form) {
-		// console.log("FORM TO LOGIN", form.username, "::::", form.password)
-		console.log("USERS FROM LOGIN FUNC::::", users)
 		try {
-			const user = users.find((user) => user.password == form.password && user.FName == form.username)
+			const user = users.find((user) => user.password === form.password && user.FName === form.username)
 
 			console.log("FOUND USER::::", user)
 			if (!user) {
@@ -54,13 +51,13 @@ function useUserHook(){
 
 	}
 
-	async function register(form){
+	 function register(form){
 		const newUser = {
 			...form,
 			id: uuidv4()
 		}
 		try {
-			const response = await axios.post(`${baseUrl}/users`, newUser)
+			const response = axios.post(`${baseUrl}/users`, newUser)
 			console.log(response.data);
 			setRequestStatus(REQUEST_STATUS.SUCCESS)
 
