@@ -8,6 +8,9 @@ import Input from '../common/Input'
 import FloatingLabelInput from '../common/FloatingLabelInput'
 import SelectInput from '../common/SelectInput'
 
+import { FaTimes } from "react-icons/fa";
+
+
 export default function Modal() {
   let [isOpen, setIsOpen] = useState(false);
   const [ form, setForm ] = useState({
@@ -62,7 +65,7 @@ export default function Modal() {
                 <DialogPanel className="w-full max-w-lg rounded-xl bg-[#d9d9d9cb] p-6 backdrop-blur-2xl">
                   <DialogTitle as="h3" className="text-base/7 font-medium text-black mb-5 flex justify-between">
                     <span>Add Transaction</span>
-                    <span onClick={close}>&times</span>
+                    <span onClick={close} className='cursor-pointer'><FaTimes /></span>
                   </DialogTitle>
                   <form onSubmit={handleSubmit}>
                     <div className='space-y-6'>
